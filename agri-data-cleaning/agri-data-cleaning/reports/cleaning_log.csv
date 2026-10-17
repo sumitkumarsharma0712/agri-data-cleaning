@@ -1,0 +1,18 @@
+rule,records_affected,note
+R01 placeholders -> missing,20,"-999, NA, ?, blank"
+R02 crop/district names standardised,612,
+R03 dates parsed to ISO,612,0 unparsed
+R04 area converted to hectare,612,
+R05 exact duplicates removed,12,
+"R06 range check soil_ph [3,10]",5,set to missing
+"R06 range check rainfall_mm [0,1500]",0,set to missing
+"R06 range check area_ha [0.05,50]",4,set to missing
+"R06 range check fertiliser_kg_ha [0,400]",1,set to missing
+R07 yield above agronomic limit,5,set to missing (decimal-point errors)
+R08 yield IQR outliers flagged (kept),7,
+R09 impute soil_ph (district median),113,
+R09 impute rainfall_mm (district median),20,
+R09 impute fertiliser_kg_ha (district median),11,
+R09 impute area_ha (district median),4,
+R10 rows without target dropped,20,
+R11 logical check: sowing year,0,
